@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 8000;
 // API
 // =========================================================
 const users = require('./api/users');
+const books = require('./api/books');
 
 
 // =========================================================
@@ -42,6 +43,8 @@ app.get('/', (req, res) => {
 // Routes
 // =========================================================
 app.use('/api/users', users);
+app.use('/api/books', books);
+
 
 app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
