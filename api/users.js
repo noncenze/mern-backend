@@ -17,6 +17,7 @@ const test = async (req, res) => {
     res.json({ message: 'User endpoint OK!'});
 }
 
+
 const signup = async (req, res) => {
     console.log(`----- INSIDE OF SIGNUP -----`);
     console.log('req.body => ', req.body);
@@ -104,6 +105,17 @@ const login = async (req, res) => {
 };
 
 
+const profile = async (req, res) => {
+    console.log('Inside of Profile Route');
+    res.json({
+        id: req.user.id,
+        name: req.user.name,
+        email: req.user.email
+    });
+};
+
+
+
 // GET Routes
 router.get('/test', test);
 
@@ -116,8 +128,8 @@ router.post('/signup', signup);
 router.post('/login', login);
 
 
-// GET api/users/current (Private)
-// router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
+// GET api/users/profile (Private)
+router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
 // router.get('/all-users', fetchUsers);
 
 
