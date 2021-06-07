@@ -24,7 +24,7 @@ router.get('/test', test);
 // router.post('/login', login);
 
 // GET api/users/current (Private)
-router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
+// router.get('/profile', passport.authenticate('jwt', { session: false }), profile);
 // router.get('/all-users', fetchUsers);
 
 module.exports = router; 
