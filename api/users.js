@@ -44,7 +44,7 @@ const signup = async (req, res) => {
             res.json(savedNewUser);
         };
     } catch (error) {
-        console.log('---------- SIGNUP ERROR ----------')
+        console.log('---------- USERS SIGNUP ERROR ----------')
         console.log(error);
         return res.status(400).json({message: `Error occurred. Please try again...`});
     }
@@ -88,7 +88,7 @@ const login = async (req, res) => {
                         userData: legit
                     });
                 } catch (error) {
-                    console.log('---------- ISMATCH ERROR ----------');
+                    console.log('---------- USERS ISMATCH ERROR ----------');
                     console.log(error);
                     return res.status(400).json({ message: 'Session has ended. Please log in again.'});
                 };
@@ -97,7 +97,7 @@ const login = async (req, res) => {
             };
         };
     } catch (error) {
-        console.log('---------- LOGIN ERROR ----------')
+        console.log('---------- USERS LOGIN ERROR ----------')
         console.log(error);
         return res.status(400).json({ message: 'Either email or password is incorrect. Please try again.'});
     };

@@ -17,7 +17,7 @@ db.once('open', () => {
 });
 
 db.on('error', (error) => {
-    console.log('------------ DATABASE ERROR ------------')
+    console.log('------------ INDEX.JS ERROR ------------')
     console.log(error);
 });
 
