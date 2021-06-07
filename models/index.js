@@ -19,7 +19,7 @@ db.once('open', () => {
 db.on('error', (error) => {
     console.log('------------ DATABASE ERROR ------------')
     console.log(error);
-})
+});
 
 
 // Import all of the models
@@ -29,4 +29,4 @@ const User = require('./User');
 // Export all the models within this file
 module.exports = {
     User
-}
+};
